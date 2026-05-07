@@ -1,12 +1,10 @@
-/* 1. Переменные */
 :root {
-    --main-color: #6f4e37; /* Кофейный */
-    --accent-color: #d2b48c; /* Бежевый */
+    --main-color: #6f4e37; 
+    --accent-color: #d2b48c; 
     --text-dark: #2d2d2d;
     --white: #ffffff;
 }
 
-/* Общие сбросы */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +23,6 @@ body {
     padding: 0 20px;
 }
 
-/* 2. Шапка (Flexbox + Position: Fixed) */
 .header {
     background-color: var(--white);
     padding: 15px 0;
@@ -60,11 +57,10 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover { /* Псевдокласс :hover */
+.nav-links a:hover { 
     color: var(--main-color);
 }
 
-/* 3. Hero Section + Анимация */
 .hero {
     height: 70vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -81,7 +77,7 @@ body {
 
 .hero h1 {
     font-size: 3rem;
-    animation: slideUp 1s ease-out; /* CSS Анимация */
+    animation: slideUp 1s ease-out; 
 }
 
 @keyframes slideUp {
@@ -99,13 +95,12 @@ body {
     margin-top: 20px;
 }
 
-/* 4. Сетка меню (CSS Grid) */
 .menu-section { padding: 60px 0; }
 .title { text-align: center; margin-bottom: 40px; }
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
 
@@ -114,7 +109,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    position: relative; /* Для бэйджа */
+    position: relative; 
 }
 
 .menu-item img {
@@ -124,7 +119,7 @@ body {
     border-radius: 8px;
 }
 
-.badge { /* Position Absolute */
+.badge { 
     position: absolute;
     top: 10px;
     right: 10px;
@@ -135,7 +130,6 @@ body {
     border-radius: 20px;
 }
 
-/* 5. Форма (Стилизация) */
 .contact { padding: 60px 0; background: #f4f4f4; }
 .form-card {
     max-width: 500px;
@@ -157,7 +151,7 @@ body {
     border-radius: 4px;
 }
 
-.order-form input:focus { /* Псевдокласс :focus */
+.order-form input:focus { 
     border-color: var(--main-color);
     outline: none;
 }
@@ -173,7 +167,6 @@ body {
 
 .form-btn:hover { background: #5a3e2b; }
 
-/* 6. Адаптивность (2 брейкпоинта) */
 
 @media (max-width: 900px) {
     .menu-grid { grid-template-columns: repeat(2, 1fr); }
@@ -181,7 +174,7 @@ body {
 
 @media (max-width: 600px) {
     .menu-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; } /* Скрываем меню на мобилках для простоты */
+    .nav-links { display: none; } 
     .hero h1 { font-size: 2rem; }
 }
 
