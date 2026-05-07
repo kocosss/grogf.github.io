@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аромат Кофе — Уютная кофейня</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Кофе<span>Варка</span></div>
+            <ul class="nav-links">
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Главный экран -->
+        <section class="hero">
+            <div class="hero-text container">
+                <h1>Начни утро с <em>правильного</em> кофе</h1>
+                <p>Более 20 сортов свежей обжарки и домашняя выпечка в самом центре города.</p>
+                <a href="#menu" class="main-btn">Смотреть меню</a>
+            </div>
+        </section>
+
+        <!-- Меню (Используем Grid) -->
+        <section id="menu" class="menu-section container">
+            <h2 class="title">Наше Популярное Меню</h2>
+            <div class="menu-grid">
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=400" alt="Капучино">
+                    <h3>Капучино</h3>
+                    <p>Классический вкус с густой пенкой.</p>
+                    <strong>180 ₽</strong>
+                </article>
+                <article class="menu-item special">
+                    <span class="badge">New</span> <!-- Для Position: Absolute -->
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=400" alt="Латте Макиато">
+                    <h3>Латте Макиато</h3>
+                    <p>Трехслойный кофейный напиток.</p>
+                    <strong>220 ₽</strong>
+                </article>
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=400" alt="Круассан">
+                    <h3>Круассан</h3>
+                    <p>Свежая выпечка с маслом.</p>
+                    <strong>120 ₽</strong>
+                </article>
+            </div>
+        </section>
+
+        <!-- О нас (Используем Flexbox) -->
+        <section id="about" class="about container">
+            <div class="about-content">
+                <h2>Почему выбирают нас?</h2>
+                <ul class="features">
+                    <li>Свежая обжарка каждый день</li>
+                    <li>Бариста с опытом от 3-х лет</li>
+                    <li>Уютные места для работы с ноутбуком</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Контакты и Форма -->
+        <section id="contact" class="contact container">
+            <div class="form-card">
+                <h2>Заказать звонок</h2>
+                <form class="order-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш Email" required>
+                    <select>
+                        <option>Хочу столик</option>
+                        <option>Заказать кофе с собой</option>
+                        <option>Вопрос по меню</option>
+                    </select>
+                    <button type="submit" class="form-btn">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Кофейня «КофеВарка».</p>
+    </footer>
+
+</body>
+</html>
