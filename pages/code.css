@@ -1,0 +1,198 @@
+/* 1. CSS Переменные */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #a855f7;
+    --dark-bg: #0f172a;
+    --text-light: #f8fafc;
+    --transition-fast: 0.3s ease;
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Box-sizing */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Flexbox в навигации */
+.header {
+    background: rgba(15, 23, 42, 0.9);
+    padding: 20px 0;
+    position: sticky; /* Position: sticky */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-list a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.nav-list a:hover { /* Псевдокласс :hover */
+    color: var(--primary-color);
+}
+
+/* 3. Анимация Hero */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.animate-title {
+    font-size: 3.5rem;
+    animation: fadeInDown 1.5s ease; /* CSS Анимация */
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: transform var(--transition-fast);
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Псевдокласс */
+}
+
+/* 4. CSS Grid в Услугах */
+.services {
+    padding: 80px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    position: relative; /* Position: relative */
+    transition: var(--transition-fast);
+}
+
+.grid-item:nth-child(2) { /* Псевдокласс :nth-child */
+    border-color: var(--primary-color);
+}
+
+.grid-item::before { /* Псевдоэлемент ::before */
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    width: 40px;
+    height: 5px;
+    background: var(--primary-color);
+}
+
+/* 5. Стилизация форм */
+.contact {
+    padding: 80px 0;
+}
+
+.form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background: #334155;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+}
+
+input:focus { /* Псевдокласс :focus */
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* 6. Адаптивность (Медиа-запросы) */
+
+/* Таблетки (1 брейкпоинт) */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Мобильные устройства (2 брейкпоинт) */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Для упрощения в демо */
+    }
+    .animate-title {
+        font-size: 2.5rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
